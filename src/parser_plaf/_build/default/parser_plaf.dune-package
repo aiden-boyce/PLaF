@@ -1,0 +1,81 @@
+(lang dune 3.6)
+(name parser_plaf)
+(version 0.01)
+(sections (lib .) (libexec .))
+(files
+ (lib
+  (META
+   ast.ml
+   dune-package
+   grammar.ml
+   grammar.mli
+   lexer.ml
+   parser.ml
+   parserMessages.ml
+   parser_plaf.a
+   parser_plaf.cma
+   parser_plaf.cmi
+   parser_plaf.cmt
+   parser_plaf.cmx
+   parser_plaf.cmxa
+   parser_plaf.ml
+   parser_plaf__Ast.cmi
+   parser_plaf__Ast.cmt
+   parser_plaf__Ast.cmx
+   parser_plaf__Grammar.cmi
+   parser_plaf__Grammar.cmt
+   parser_plaf__Grammar.cmti
+   parser_plaf__Grammar.cmx
+   parser_plaf__Lexer.cmi
+   parser_plaf__Lexer.cmt
+   parser_plaf__Lexer.cmx
+   parser_plaf__Parser.cmi
+   parser_plaf__Parser.cmt
+   parser_plaf__Parser.cmx
+   parser_plaf__ParserMessages.cmi
+   parser_plaf__ParserMessages.cmt
+   parser_plaf__ParserMessages.cmx
+   parser_plaf__UnitActionsGrammar.cmi
+   parser_plaf__UnitActionsGrammar.cmt
+   parser_plaf__UnitActionsGrammar.cmti
+   parser_plaf__UnitActionsGrammar.cmx
+   unitActionsGrammar.ml
+   unitActionsGrammar.mli))
+ (libexec (parser_plaf.cmxs)))
+(library
+ (name parser_plaf)
+ (kind normal)
+ (archives (byte parser_plaf.cma) (native parser_plaf.cmxa))
+ (plugins (byte parser_plaf.cma) (native parser_plaf.cmxs))
+ (native_archives parser_plaf.a)
+ (requires menhirLib)
+ (main_module_name Parser_plaf)
+ (modes byte native)
+ (modules
+  (wrapped
+   (main_module_name Parser_plaf)
+   (modules
+    ((name Ast) (obj_name parser_plaf__Ast) (visibility public) (impl))
+    ((name Grammar)
+     (obj_name parser_plaf__Grammar)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name Lexer) (obj_name parser_plaf__Lexer) (visibility public) (impl))
+    ((name Parser) (obj_name parser_plaf__Parser) (visibility public) (impl))
+    ((name ParserMessages)
+     (obj_name parser_plaf__ParserMessages)
+     (visibility public)
+     (impl))
+    ((name UnitActionsGrammar)
+     (obj_name parser_plaf__UnitActionsGrammar)
+     (visibility public)
+     (impl)
+     (intf)))
+   (alias_module
+    (name Parser_plaf)
+    (obj_name parser_plaf)
+    (visibility public)
+    (kind alias)
+    (impl))
+   (wrapped true))))
