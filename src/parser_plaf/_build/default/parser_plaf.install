@@ -5,6 +5,7 @@ lib: [
   "_build/install/default/lib/parser_plaf/grammar.ml"
   "_build/install/default/lib/parser_plaf/grammar.mli"
   "_build/install/default/lib/parser_plaf/lexer.ml"
+  "_build/install/default/lib/parser_plaf/opam"
   "_build/install/default/lib/parser_plaf/parser.ml"
   "_build/install/default/lib/parser_plaf/parserMessages.ml"
   "_build/install/default/lib/parser_plaf/parser_plaf.a"

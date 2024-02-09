@@ -38,5 +38,21 @@ let eval_prog (AProg(_,e)) =
 let interp (e:string) : int result =
   e |> parse |> eval_prog
 
-
-
+(* Original eval_expr before the other stuff *)
+(*
+(type 'a result = Error of string | Ok of 'a
+let rec old_eval_expr : expr -> int result =
+  fun e ->
+    match e with 
+    | Int n -> Ok n
+    | Sub(e1, e2) ->
+      (match e1 with
+       | Error s -> Error s 
+       | Ok m ->
+        (match e2 with
+         | Error s -> Error s 
+         | Ok n -> Ok (m-n)
+        )  
+      )
+)
+*)

@@ -10,6 +10,7 @@
    grammar.ml
    grammar.mli
    lexer.ml
+   opam
    parser.ml
    parserMessages.ml
    parser_plaf.a
