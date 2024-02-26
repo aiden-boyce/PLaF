@@ -53,15 +53,21 @@ let rec eval_expr : expr -> exp_val ea_result =
   | Pair(e1,e2) ->
     eval_expr e1 >>= fun ev1 ->
     eval_expr e2 >>= fun ev2 ->
-    return (PairVal(ev1,ev2))
+    return (PairVal (ev1,ev2))
   | Fst(e) ->
     eval_expr e >>=
-    pair_of_pairVal >>= fun (l,_) ->
+    pair_of_pairVal >>= fun (l,_r) ->
     return l
   | Snd(e) ->
     eval_expr e >>=
-    pair_of_pairVal >>= fun (_,r) ->
+    pair_of_pairVal >>= fun (_l,r) ->
     return r
+  | Unpair(id1, id2, env1, env2) ->
+    eval_expr env1 >>= 
+    pair_of_pairVal >>= fun (ev1,ev2) ->
+    ((extend_env id1 ev1 >>+  
+    extend_env id2 ev2) >>+ 
+    eval_expr env2)
   | Debug(_e) ->
     string_of_env >>= fun str ->
     print_endline str; 
