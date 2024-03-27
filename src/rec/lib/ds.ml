@@ -106,7 +106,7 @@ let clos_of_procVal : exp_val -> (string*expr*env) ea_result =
   | _ -> error "Expected a closure!"
 
 let rec string_of_expval = function
-  |  NumVal n -> "NumVal " ^ string_of_int n
+  | NumVal n -> "NumVal " ^ string_of_int n
   | BoolVal b -> "BoolVal " ^ string_of_bool b
   | UnitVal -> "UnitVal "
   | ProcVal (id,body,env) -> "ProcVal ("^ id ^","^string_of_expr

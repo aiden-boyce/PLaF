@@ -1,5 +1,6 @@
 open Ds
 
+(* Store  (our heap / stores values) *)
 type 'a t = { mutable data: 'a array; mutable size: int}
   (* data is declared mutable so the store may be resized *)
 
