@@ -1,0 +1,165 @@
+# dune utop
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /home/student/Documents/PLaF/src/implicit-refs
+# Auto-detected concurrency: 4
+$ /usr/bin/ocamlc.opt -config > /tmp/dune_f0fe22_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/home/student/.opam/default/lib/toplevel"
+#  ; ocaml_bin = External "/usr/bin"
+#  ; ocaml = Ok External "/home/student/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/usr/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/usr/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/usr/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/usr/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/home/student/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/usr/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/home/student/Documents/PLaF/src/implicit-refs"
+#        ; "INSIDE_DUNE" :
+#            "/home/student/Documents/PLaF/src/implicit-refs/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/home/student/Documents/PLaF/src/implicit-refs/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/home/student/Documents/PLaF/src/implicit-refs/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/home/student/Documents/PLaF/src/implicit-refs/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths = [ External "/home/student/.opam/default/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.13.1"
+#      ; standard_library_default = "/usr/lib/ocaml"
+#      ; standard_library = "/usr/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "x86_64-linux-gnu-gcc"
+#      ; ocamlc_cflags =
+#          [ "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-g"
+#          ; "-O2"
+#          ; "-ffile-prefix-map=/build/ocaml-SC7b9w/ocaml-4.13.1=."
+#          ; "-fstack-protector-strong"
+#          ; "-Wformat"
+#          ; "-Werror=format-security"
+#          ]
+#      ; ocamlc_cppflags =
+#          [ "-D_FILE_OFFSET_BITS=64"; "-Wdate-time"; "-D_FORTIFY_SOURCE=2" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-g"
+#          ; "-O2"
+#          ; "-ffile-prefix-map=/build/ocaml-SC7b9w/ocaml-4.13.1=."
+#          ; "-fstack-protector-strong"
+#          ; "-Wformat"
+#          ; "-Werror=format-security"
+#          ]
+#      ; ocamlopt_cppflags =
+#          [ "-D_FILE_OFFSET_BITS=64"; "-Wdate-time"; "-D_FORTIFY_SOURCE=2" ]
+#      ; bytecomp_c_compiler =
+#          [ "x86_64-linux-gnu-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-g"
+#          ; "-O2"
+#          ; "-ffile-prefix-map=/build/ocaml-SC7b9w/ocaml-4.13.1=."
+#          ; "-fstack-protector-strong"
+#          ; "-Wformat"
+#          ; "-Werror=format-security"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-Wdate-time"
+#          ; "-D_FORTIFY_SOURCE=2"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "x86_64-linux-gnu-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-g"
+#          ; "-O2"
+#          ; "-ffile-prefix-map=/build/ocaml-SC7b9w/ocaml-4.13.1=."
+#          ; "-fstack-protector-strong"
+#          ; "-Wformat"
+#          ; "-Werror=format-security"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-Wdate-time"
+#          ; "-D_FORTIFY_SOURCE=2"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; native_pack_linker = [ "x86_64-linux-gnu-ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "x86_64-linux-gnu-as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "x86_64-pc-linux-gnu"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X030"
+#      ; cmi_magic_number = "Caml1999I030"
+#      ; cmo_magic_number = "Caml1999O030"
+#      ; cma_magic_number = "Caml1999A030"
+#      ; cmx_magic_number = "Caml1999Y030"
+#      ; cmxa_magic_number = "Caml1999Z030"
+#      ; ast_impl_magic_number = "Caml1999M030"
+#      ; ast_intf_magic_number = "Caml1999N030"
+#      ; cmxs_magic_number = "Caml1999D030"
+#      ; cmt_magic_number = "Caml1999T030"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -bin-annot -I lib/.implicit_refs.objs/byte -no-alias-deps -opaque -o lib/.implicit_refs.objs/byte/implicit_refs.cmo -c -impl lib/implicit_refs.ml-gen)
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl lib/store.ml) > _build/default/lib/.implicit_refs.objs/store.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl lib/interp.ml) > _build/default/lib/.implicit_refs.objs/interp.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -intf lib/store.mli) > _build/default/lib/.implicit_refs.objs/store.mli.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl lib/ds.ml) > _build/default/lib/.implicit_refs.objs/ds.ml.d
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I lib/.implicit_refs.objs/byte -I /home/student/.opam/default/lib/menhirLib -I /home/student/.opam/default/lib/parser_plaf -no-alias-deps -opaque -open Implicit_refs -o lib/.implicit_refs.objs/byte/implicit_refs__Ds.cmo -c -impl lib/ds.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I lib/.implicit_refs.objs/byte -I /home/student/.opam/default/lib/menhirLib -I /home/student/.opam/default/lib/parser_plaf -no-alias-deps -opaque -open Implicit_refs -o lib/.implicit_refs.objs/byte/implicit_refs__Store.cmi -c -intf lib/store.mli)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I lib/.implicit_refs.objs/byte -I /home/student/.opam/default/lib/menhirLib -I /home/student/.opam/default/lib/parser_plaf -intf-suffix .ml -no-alias-deps -opaque -open Implicit_refs -o lib/.implicit_refs.objs/byte/implicit_refs__Store.cmo -c -impl lib/store.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I lib/.implicit_refs.objs/byte -I /home/student/.opam/default/lib/menhirLib -I /home/student/.opam/default/lib/parser_plaf -no-alias-deps -opaque -open Implicit_refs -o lib/.implicit_refs.objs/byte/implicit_refs__Interp.cmo -c -impl lib/interp.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -a -o lib/implicit_refs.cma lib/.implicit_refs.objs/byte/implicit_refs.cmo lib/.implicit_refs.objs/byte/implicit_refs__Ds.cmo lib/.implicit_refs.objs/byte/implicit_refs__Store.cmo lib/.implicit_refs.objs/byte/implicit_refs__Interp.cmo)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -bin-annot -I lib/.utop/.utop.eobjs/byte -I /home/student/.opam/default/lib/findlib -I /home/student/.opam/default/lib/lambda-term -I /home/student/.opam/default/lib/logs -I /home/student/.opam/default/lib/lwt -I /home/student/.opam/default/lib/lwt/unix -I /home/student/.opam/default/lib/lwt_react -I /home/student/.opam/default/lib/menhirLib -I /home/student/.opam/default/lib/mew -I /home/student/.opam/default/lib/mew_vi -I /home/student/.opam/default/lib/ocplib-endian -I /home/student/.opam/default/lib/ocplib-endian/bigstring -I /home/student/.opam/default/lib/parser_plaf -I /home/student/.opam/default/lib/react -I /home/student/.opam/default/lib/result -I /home/student/.opam/default/lib/trie -I /home/student/.opam/default/lib/uchar -I /home/student/.opam/default/lib/utop -I /home/student/.opam/default/lib/uucp -I /home/student/.opam/default/lib/uuseg -I /home/student/.opam/default/lib/uutf -I /home/student/.opam/default/lib/zed -I /usr/lib/ocaml/compiler-libs -I /usr/lib/ocaml/threads -I lib/.implicit_refs.objs/byte -no-alias-deps -o lib/.utop/.utop.eobjs/byte/dune__exe__Utop.cmo -c -impl lib/.utop/utop.ml-gen)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -o lib/.utop/utop.exe -output-complete-exe /usr/lib/ocaml/compiler-libs/ocamlcommon.cma /usr/lib/ocaml/compiler-libs/ocamlbytecomp.cma /usr/lib/ocaml/compiler-libs/ocamltoplevel.cma /home/student/.opam/default/lib/findlib/findlib.cma /home/student/.opam/default/lib/findlib/findlib_top.cma /home/student/.opam/default/lib/logs/logs.cma -I /usr/lib/ocaml /home/student/.opam/default/lib/lwt/lwt.cma /home/student/.opam/default/lib/logs/logs_lwt.cma /usr/lib/ocaml/unix.cma -I /usr/lib/ocaml /usr/lib/ocaml/bigarray.cma -I /usr/lib/ocaml /home/student/.opam/default/lib/ocplib-endian/ocplib_endian.cma /home/student/.opam/default/lib/ocplib-endian/bigstring/ocplib_endian_bigstring.cma /usr/lib/ocaml/threads/threads.cma -I /usr/lib/ocaml /home/student/.opam/default/lib/lwt/unix/lwt_unix.cma -I /home/student/.opam/default/lib/lwt/unix /home/student/.opam/default/lib/react/react.cma /home/student/.opam/default/lib/lwt_react/lwt_react.cma /home/student/.opam/default/lib/result/result.cma /home/student/.opam/default/lib/uutf/uutf.cma /home/student/.opam/default/lib/uucp/uucp.cma /home/student/.opam/default/lib/uuseg/uuseg.cma /home/student/.opam/default/lib/zed/zed.cma /home/student/.opam/default/lib/trie/trie.cma /home/student/.opam/default/lib/mew/mew.cma /home/student/.opam/default/lib/mew_vi/mew_vi.cma /home/student/.opam/default/lib/lambda-term/lambda_term.cma -I /home/student/.opam/default/lib/lambda-term /home/student/.opam/default/lib/utop/uTop.cma /home/student/.opam/default/lib/menhirLib/menhirLib.cma /home/student/.opam/default/lib/parser_plaf/parser_plaf.cma lib/implicit_refs.cma lib/.utop/.utop.eobjs/byte/dune__exe__Utop.cmo -linkall -warn-error -31)
