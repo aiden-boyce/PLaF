@@ -108,15 +108,15 @@ let rec eval_expr : expr -> exp_val ea_result =
       eval_expr e3 >>= fun node -> return @@ node)
   (* hw3 part 2 *)
   | Record(fs) -> 
-  (* 'fs' is a list of (string, (bool, expr)) tuples *)
-  let field_names, field_values = List.split fs in
-  let field_exprs = List.map snd field_values in
-  (* evaluate all field expressions *)
-  eval_exprs field_exprs >>= fun eval_fieldVals ->
-  (* check for dupes *)
-  if dupes field_names
-  then error "Record: duplicate fields"
-  else
+    (* 'fs' is a list of (string, (bool, expr)) tuples *)
+    let field_names, field_values = List.split fs in
+    let field_exprs = List.map snd field_values in
+    (* evaluate all field expressions *)
+    eval_exprs field_exprs >>= fun eval_fieldVals ->
+    (* check for dupes *)
+    if dupes field_names
+    then error "Record: duplicate fields"
+    else
     (* combine evaluated field values with their corresponding field names *)
     return (RecordVal (List.combine field_names eval_fieldVals))
   | Proj(e, id) -> 
