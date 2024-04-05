@@ -1,6 +1,10 @@
 (* This file defines expressed values and environments *)
 open Parser_plaf.Ast
 
+(* 
+  Name: Aiden Boyce
+  Pledge: I pledge my honor that I have abided by the Stevens Honor System.
+*)
 
 (* expressed values and environments are defined mutually recursively *)
 
@@ -153,14 +157,13 @@ let string_of_env : string ea_result =
   | _ -> Ok (">>Environment:\n"^ string_of_env' [] env)
 
 
-(* helper functions for hw4 *)
-(* Finds key associated with the value in the Record *)
-let rec find (x:('a * exp_val) list) id = 
-  match x with
-  | [] -> error "Proj: field does not exist"
-  | (a,b)::t -> 
-  if a=id
-  then return b
-  else find t id
-
-
+(* HW4 Helper Functions *)
+(* Finds the Field associated with an ID *)
+let rec find_field : (string * (bool * exp_val)) list -> string -> (string * (bool * exp_val)) result  = 
+  fun record id ->
+    match record with
+    | [] -> Error "Proj: field does not exist"
+    | (f_id, (is_mutable, e))::t -> 
+      if id = f_id
+      then Ok (f_id, (is_mutable, e))
+      else find_field t id

@@ -157,6 +157,6 @@ let rec find (x:('a * exp_val) list) id =
   match x with
   | [] -> error "Proj: field does not exist"
   | (a,b)::t -> 
-  if a=id
-  then return b
-  else find t id
+    if a=id
+    then return b
+    else find t id

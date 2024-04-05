@@ -104,43 +104,7 @@ let rec eval_expr : expr -> exp_val ea_result = fun e ->
     let str_store = Store.string_of_store string_of_expval g_store 
     in (print_endline (str_env^"\n"^str_store);
         error "Debug called")
-  (* HW 4 TODO *)
-  | IsEqual(e1, e2) -> 
-    eval_expr e1 >>=
-    int_of_numVal >>= fun n1 ->
-    eval_expr e2 >>=
-    int_of_numVal >>= fun n2 ->
-    return @@ NumVal (n1 = n2)
-  | IsGT ( e1, e2) -> 
-    eval_expr e1 >>=
-    int_of_numVal >>= fun n1 ->
-    eval_expr e2 >>=
-    int_of_numVal >>= fun n2 ->
-    return @@ NumVal (n1 > n2)
-  | IsLT ( e1 , e2 ) -> (* check that evaluation of e1 , e2 are NumVals *)
-    eval_expr e1 >>=
-    int_of_numVal >>= fun n1 ->
-    eval_expr e2 >>=
-    int_of_numVal >>= fun n2 ->
-    return @@ NumVal (n1 < n2)
-  | Record ( fs ) ->
-    sequence ( List . map process field fs ) > >= fun evs ->
-    return ( RecordVal ( addIds fs evs ))
-  | Proj(e, id) -> 
-    eval_expr e >>= 
-    fields_of_recordVal >>= fun record ->
-    find record id
-  | SetField ( e1 , id , e2 ) ->
-    failwith " implement "
-  | IsNumber ( e ) ->
-    failwith " implement "
   | _ -> failwith ("Not implemented: "^string_of_expr e)
-and
-  process field ( id,(is mutable,e)) =
-    eval_expr e > >= fun ev ->
-    if is_mutable
-    then return ( RefVal ( Store . new_ref g_store ev ))
-    else return ev
 
 let eval_prog (AProg(_,e)) =
   eval_expr e   
