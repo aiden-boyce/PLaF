@@ -1,4 +1,4 @@
 .DS_Store
 /_build
-src/let_ext/
-src/explicit-refs-mf/
+/src/let_ext/
+/src/explicit-refs-mf/
